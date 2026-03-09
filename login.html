@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adapt Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="wrapper login-form">
+                <h1 class="form-title">Login</h1>
+
+                <form id="Login form" onsubmit="Login()">
+                    <div class="inputs">
+                        <label for="log-username">Username</label>
+                        <input type="text" id="log-username" name="username" placeholder="enter your username" required>
+                    </div>
+                    <div class="inputs">
+                        <label for="log-password">Password</label>
+                        <input type="password" id="log-password" name="password" placeholder="enter your password" required>
+                    </div>
+                    <button type="button" class="submit-btn" onclick="Login()">Log in</button>
+                </form>
+
+                <p class="register">
+                    Don`t have an account?
+                    <a href="register.html">Sign up</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+    <script src="login.js"></script>
+    
+</body>
+</html>

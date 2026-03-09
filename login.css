@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background: linear-gradient(135deg, #6581fc 0%, #7a48ac 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main{
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.99);
+}
+
+.wrapper {
+    display: block;
+}
+
+
+
+.form-title{
+    font-size: 2em;
+    color: #252525;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.inputs{
+    margin-bottom: 20px;
+}
+
+.inputs label{
+    display: block;
+    margin-bottom: 8px;
+    color: #252525;
+    font-weight: 600;
+}
+
+.inputs input{
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #f1ecec;
+    border-radius: 10px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.inputs input:focus{
+    outline: none;
+    border-color: #627cf0;
+}
+
+.submit-btn{
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #5b75ec 0%, #7b49ad 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover{
+    transform: translateY(2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.register{
+    text-align: center;
+    margin-top: 20px;
+    color: #616161;
+}
+
+.register a{
+    color: #596fd4;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.toggle-text a:hover {
+    text-decoration: underline;
+}
+
+.msg{
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    display: none;
+}
+
+.msg.show {
+    display: block;
+}
+
+.msg.success {
+    background-color: #d8e9dc;
+    color: #11491e;
+    border: 1px solid #bbdac3;
+}
+
+.msg.error {
+    background-color: #e4b6ba;
+    color: #751822;
+    border: 1px solid #f1b8be;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+    }
+    
+    .form-title {
+        font-size: 1.5em;
+    }
+}
