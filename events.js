@@ -1,4 +1,4 @@
-const API_URL = 'http://127.0.0.1:8000/events';
+const API_URL = 'https://events-api-production-4a05.up.railway.app/events';
 
 const searchInput = document.getElementById('search');
 const locationFilter = document.getElementById('location-filter');
