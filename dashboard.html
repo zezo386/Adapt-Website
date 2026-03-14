@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Adapt</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="brand">
+                <a href="index.html" class="brand-link">
+                    <i class="fas fa-hand-heart"></i>
+                    <img src="adapt.ico" class="adapt-logo">Adapt
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="events.html" class="nav-link">Events</a>
+                    <a href="index.html#committees" class="nav-link">Committees</a>
+                    <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                </div>
+
+                <div class="user-section" id="user-section"></div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="dashboard-container">
+        <div class="dashboard-header">
+            <div class="dashboard-title">
+                <h1>
+                    Welcome back, <span id="user-name-display">Member</span>!
+                </h1>
+                <p>
+                    See what is new in your committee
+                </p>
+            </div>
+            <div class="committee-badge" id="committee-badge">
+                <i class="fas fa-user"></i>
+                <span id="committee-name">Creativity</span>
+            </div>
+        </div>
+        <div class="dashboard-grid">
+            <div class="tasks">
+                <div class="section-header">
+                    <h2>
+                       <i class="fas fa-tasks"></i>
+                       Your Tasks:
+                    </h2>
+                </div>
+                <div class="tasks-list" id="tasks-list">
+
+                </div>
+                <div class="committee-news" id="committee-news"></div>
+            </div>
+        </div>
+        <div class="admin-panel" id="admin-panel" style="display: none;">
+            <div class="admin-header">
+                <h2>
+                    <i class="fas fa-shield-alt"></i>
+                    Admin Dashboard
+                </h2>
+                <span class="admin-badge">Administrator</span>
+            </div>
+            
+            <!-- Tasks Section -->
+            <div class="admin-section">
+                <div class="admin-section-header">
+                    <h3><i class="fas fa-tasks"></i> Manage Tasks</h3>
+                    <button class="admin-add-btn" onclick="showAddTaskModal()">
+                        <i class="fas fa-plus-circle"></i> Create Task
+                    </button>
+                </div>
+                <div class="admin-items-grid" id="tasks-grid">
+
+                </div>
+            </div>
+            
+            <div class="admin-section">
+                <div class="admin-section-header">
+                    <h3><i class="fas fa-newspaper"></i> Manage News</h3>
+                    <button class="admin-add-btn" onclick="showAddNewsModal()">
+                        <i class="fas fa-plus-circle"></i> Add News
+                    </button>
+                </div>
+                
+                <div class="admin-items-grid" id="news-grid">
+
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="add-news-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Add News</h3>
+                    <button class="modal-close" onclick="closeModal('add-news-modal')">&times;</button>
+                </div>
+                <form id="add-news-form">
+                    <div class="form-group">
+                        <label>News Title</label>
+                        <input type="text" id="news-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="news-description" rows="4" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Committee</label>
+                            <select id="news-committee" required>
+                                <option value="1">Creativity</option>
+                                <option value="2">PR</option>
+                                <option value="3">PM</option>
+                                <option value="4">Media</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>End Date</label>
+                            <input type="date" id="news-end-date" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>API Key</label>
+                        <input type="text" id="news-api-key" required placeholder="Enter API key">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="cancel-btn" onclick="closeModal('add-news-modal')">Cancel</button>
+                        <button type="submit" class="submit-btn">Add News</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal" id="add-task-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Create New Task</h3>
+                    <button class="modal-close" onclick="closeModal('add-task-modal')">&times;</button>
+                </div>
+                <form id="add-task-form">
+                    <div class="form-group">
+                        <label>Task Title</label>
+                        <input type="text" id="task-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="task-description" rows="4" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Committee</label>
+                            <select id="task-committee" required>
+                                <option value="1">Creativity</option>
+                                <option value="2">PM</option>
+                                <option value="3">PR</option>
+                                <option value="4">Media</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Due Date</label>
+                            <input type="date" id="task-due-date" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>API Key</label>
+                        <input type="text" id="task-api-key" required placeholder="Enter API key">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="cancel-btn" onclick="closeModal('add-task-modal')">Cancel</button>
+                        <button type="submit" class="submit-btn">Create Task</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        
+        
+    </main>
+    <script src="dashboard.js"></script>
+    
+</body>
+</html>
