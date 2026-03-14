@@ -55,6 +55,16 @@
                         <label for="reg-repassword">Confirm Password</label>
                         <input type="password" id="reg-repassword" name="repassword" placeholder="Confirm Password here" required>
                     </div>
+                    <div class="inputs">
+                        <label for="reg-committee">Committee</label>
+                        <select id="reg-committee" name="committee" class="committee-select" required>
+                            <option value="" disabled selected>Select a committee</option>
+                            <option value="1">Creativity</option>
+                            <option value="2">Public Relations</option>
+                            <option value="3">Project Management</option>
+                            <option value="4">Media Production</option>
+                        </select>
+                    </div>
                     <button type="button" class="submit-btn" onclick="Register()">Sign up</button>
                 </form>
                 <p class="register">
