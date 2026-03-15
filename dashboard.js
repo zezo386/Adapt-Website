@@ -181,11 +181,6 @@ function add_news_card(news){
 
 
     cardHTML = `
-        <div class="committee-icon-large committee-${committee}">
-            <i class="fas ${getCommitteeIcon(committee)}"></i>
-        </div>
-        <h3>${committee.charAt(0).toUpperCase() + committee.slice(1)} Committee</h3>
-        
         <div class="news-section">
             <h4 class="news-title">
                 <i class="fas fa-newspaper"></i>
