@@ -47,8 +47,8 @@ https://events-api-production-4a05.up.railway.app/docs#/
 Clone the repository
     bash
 
-    git clone <https://github.com/zezo386/Adapt-Website>
-    cd adapt
+    git clone https://github.com/zezo386/Adapt-Website.git
+    cd Adapt-Website
 
 # Contributes
 
