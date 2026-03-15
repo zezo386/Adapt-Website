@@ -24,7 +24,7 @@ async function verify_token(){
         currentUser = {
             name: res["sub"],
             committee: res["committee"],
-            isAdmin: res["role"] ,
+            isAdmin: res["role"]=="admin",
             id: res["user_id"]
         };
     }
