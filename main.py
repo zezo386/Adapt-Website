@@ -361,7 +361,7 @@ def register(user: add_user_model):
                 "authorized":False,
                 "message":"username already taken"
             }
-        cursor.execute("INSERT INTO users (username, password, email, committee) VALUES (?, ?, ?, ?)",(user.username,user.password,user.email,user.committee))
+        cursor.execute("INSERT INTO users (username, password, email, committee_id) VALUES (?, ?, ?, ?)",(user.username,user.password,user.email,user.committee))
         conn.commit()
         return {
             "authorized":True,
