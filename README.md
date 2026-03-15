@@ -38,7 +38,7 @@ the example for everyone to try is "1"
 ## features
 the front end is made using HTML, CSS, vanilla JS, I also used google fonts and font awesome icons and deployed on github on this link
 
-https://zezo386.github.io/events-api/
+https://zezo386.github.io/Adapt-Website/
 
 the back end is made using python FastAPI, SQLite3, JWT and deployed on railway on this link
 
@@ -47,7 +47,7 @@ https://events-api-production-4a05.up.railway.app/docs#/
 Clone the repository
     bash
 
-    git clone <https://github.com/zezo386/events-api>
+    git clone <https://github.com/zezo386/Adapt-Website>
     cd adapt
 
 # Contributes
