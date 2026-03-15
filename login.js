@@ -97,7 +97,7 @@ async function Register(){
     }
 
     try{
-        response = await fetch(`${API_URL}/register`,{
+        response = await fetch(`${API_URL}/register/`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
